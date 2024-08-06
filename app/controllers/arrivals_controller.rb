@@ -12,7 +12,7 @@ class ArrivalsController < ApplicationController
         destination: arrival_data['destinationName']
       )
 
-      arrival.valid? ? arrival : {}
+      arrival if arrival.valid?
     end
   end
 end
