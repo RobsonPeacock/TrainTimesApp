@@ -1,0 +1,7 @@
+<% @arrivals.each do |arrival| %>
+  <p>Line Name: <%= arrival.line %></p>
+  <p>Platform: <%= arrival.platform %></p>
+  <p>Destination: <%= arrival.destination %></p>
+  <p>Expected in: <%= arrival.actual_time / 60 %> minutes</p>
+  <p>Scheduled: <%= Time.parse(arrival.scheduled_time).localtime %></p>
+<% end %>
