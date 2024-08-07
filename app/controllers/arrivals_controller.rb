@@ -13,6 +13,6 @@ class ArrivalsController < ApplicationController
       )
 
       arrival if arrival.valid?
-    end
+    end.sort_by(&:actual_time)
   end
 end
