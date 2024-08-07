@@ -16,7 +16,7 @@
         <td><%= arrival.platform %></td>
         <td><%= arrival.destination %></td>
         <td><%= arrival.actual_time / 60 %> minutes</td>
-        <td><%= arrival.scheduled_time %></td>
+        <td><%= formatted_date(arrival.scheduled_time) %></td>
       </tr>
     <% end %>
   </tbody>
