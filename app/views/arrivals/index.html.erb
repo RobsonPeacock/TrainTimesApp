@@ -1,7 +1,24 @@
-<% @arrivals.each do |arrival| %>
-  <p>Line Name: <%= arrival.line %></p>
-  <p>Platform: <%= arrival.platform %></p>
-  <p>Destination: <%= arrival.destination %></p>
-  <p>Expected in: <%= arrival.actual_time / 60 %> minutes</p>
-  <p>Scheduled: <%= Time.parse(arrival.scheduled_time).localtime %></p>
-<% end %>
+<div class="container table-responsive py-5">
+<table class="table table-bordered table-hover">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">Line Name</th>
+      <th scope="col">Platform</th>
+      <th scope="col">Destination</th>
+      <th scope="col">Expected in</th>
+      <th scope="col">Scheduled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @arrivals.each do |arrival| %>
+      <tr>
+        <td><%= arrival.line %></td>
+        <td><%= arrival.platform %></td>
+        <td><%= arrival.destination %></td>
+        <td><%= arrival.actual_time / 60 %> minutes</td>
+        <td><%= arrival.scheduled_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</div>
+</div>
