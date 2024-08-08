@@ -1,24 +1,41 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application utilises the TFL API to display the latest train times relating to a certain station
 
-Things you may want to cover:
+## Application Setup
 
-* Ruby version
+```bash
+# 1. Clone this repsitory
+git clone https://github.com/RobsonPeacock/TrainTimesApp.git && cd TrainTimesApp
 
-* System dependencies
+# 2. Install RVM
+\curl -sSL https://get.rvm.io | bash -s stable
 
-* Configuration
+# 3. Install ruby-3.3.0
+rvm install ruby-3.3.0
 
-* Database creation
+# 4. Go out and back to the repo to refresh gemset
+cd .. && TrainTimesApp
 
-* Database initialization
+# 5. Install bundler
+gem install bundler
 
-* How to run the test suite
+# 7. Install all necessary gems. This can take a few minutes.
+bundle
 
-* Services (job queues, cache servers, search engines, etc.)
+# 8. Start server
+rails s
+```
 
-* Deployment instructions
+## Run tests
 
-* ...
+```bash
+# Run all tests
+rspec
+
+# Run model tests
+rspec spec/models/arrival_spec.rb
+
+# Run controller tests
+rspec spec/controllers/arrivals_controller_spec.rb
+```
